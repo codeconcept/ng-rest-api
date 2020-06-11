@@ -1,11 +1,13 @@
-<form class="example-form">
+<form [formGroup]="registerForm" class="example-form" (ngSubmit)="register()">
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="email">
+      <input matInput formControlName="email" placeholder="email">
     </mat-form-field><br>
     <mat-form-field class="example-full-width">
         <mat-label>Mot de passe</mat-label>
-        <input matInput placeholder="mot de passe">
+        <input type="password" matInput formControlName="password" placeholder="mot de passe">
       </mat-form-field><br>
       <button mat-button type="submit">créer un compte</button>
   </form>
+
+Form is valid: {{ registerForm.valid }}
