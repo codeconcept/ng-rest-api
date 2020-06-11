@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-rest-api-93485": {
+      "hosting": {
+        "ng-rest-api": [
+          "ng-rest-api-93485"
+        ]
+      }
+    }
+  }
+}

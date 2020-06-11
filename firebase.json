@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ng-rest-api",
+      "public": "dist/ng-rest-api",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
