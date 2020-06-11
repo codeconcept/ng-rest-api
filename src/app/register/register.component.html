@@ -8,9 +8,24 @@
         <input type="password" matInput formControlName="password" placeholder="mot de passe">
       </mat-form-field><br>
       <button mat-button type="submit">créer un compte</button>
-  </form>
+</form>
 
-Form is valid: {{ registerForm.valid }}
+<form [formGroup]="loginForm" class="example-form" (ngSubmit)="login()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="email">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="mot de passe">
+      </mat-form-field><br>
+      <button mat-button type="submit">se connecter</button>
+</form>
+
+Register form is valid: {{ registerForm.valid }} <br>  
+Login form is valid: {{ loginForm.valid }} <br>  
 
 <hr>
 {{ result | json }}
+<hr>
+{{ user | json }}
