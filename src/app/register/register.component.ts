@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   loginForm: FormGroup;
   result;
   user;
+  message;
 
   constructor(private fb: FormBuilder, private afAuth: AngularFireAuth) { }
 
@@ -44,9 +45,14 @@ export class RegisterComponent implements OnInit {
       console.log(':(');
       return;
     }
-    console.log('login', this.loginForm.value);
-    const { email, password} = this.loginForm.value;
-    this.user = await this.afAuth.signInWithEmailAndPassword(email, password);
+    try {
+      this.message = '';
+      console.log('login', this.loginForm.value);
+      const { email, password} = this.loginForm.value;
+      this.user = await this.afAuth.signInWithEmailAndPassword(email, password);      
+    } catch (error) {
+      this.message = error.message;
+    }
   }
 
 }
