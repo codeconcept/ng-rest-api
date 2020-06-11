@@ -22,6 +22,6 @@ export class UserService {
   }
 
   getUsers() {
-    return this.afs.collection('users').valueChanges();
+    return this.afs.collection(`${this.collectionName}`).valueChanges({ idField: 'id'});
   }
 }
