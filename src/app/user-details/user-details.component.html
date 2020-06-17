@@ -4,4 +4,10 @@
 
 <div *ngIf="(user$ |async)">
     {{ user$ | async | json}}
+    <br>
+
+    {{ (user$ | async)?.createdAt.toDate() | date }}
 </div>
+
+<br>
+<button mat-raised-button color="primary" routerLink="/users">retour</button>
